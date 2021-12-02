@@ -26,17 +26,12 @@ const useData = () => {
 
     const dataPower= data?.power.values
     const powerValuesKw :any= dataPower?.map(item => {
-    //PASAJE DE UNIDAD DE MW A KW
-        const newValue= ((Number(item.value))*1000).toString()
-    
         return {...item}
     });
 
     const dataTemperature = data?.temperature.values
     const dataTemperatureC:any = dataTemperature?.map(item => {
-        //PASAJE DE UNIDAD DE MW A KW
-        const newValue= (Number(item.value)*0.1-273).toFixed(3).toString()
-        return {...item , value: newValue}
+        return {...item }
     })
 
 

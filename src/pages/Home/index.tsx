@@ -12,6 +12,7 @@ import {
     Area,
     Tooltip,
     CartesianGrid,
+    Text
 } from "recharts";
 
 import './styles.css'
@@ -98,28 +99,52 @@ const Home :FC= () =>{
             <div className="chart">
                 <div>
                     <ResponsiveContainer width="95%" height={400}>
-                        <AreaChart data={array}>
-                            <defs>
-                                <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#2451B7" stopOpacity={0.4} />
-                                    <stop offset="75%" stopColor="#2451B7" stopOpacity={0.05} />
-                                </linearGradient>
-                            </defs>
+                        <AreaChart data={array} margin={{
+                            top: 10,
+                            right: 30,
+                            left: 0,
+                            bottom: 0,
+                        }}>
+                        <defs>
+                            <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stopColor="#457b9d" stopOpacity={0.4} />
+                                <stop offset="75%" stopColor="#457b9d" stopOpacity={0.05} />
+                            </linearGradient>
+                        </defs>
 
-                        <Area dataKey="temperature"  stroke="#2451B7" fill="url(#color)"/>
+                        <Area dataKey="temperature"  stroke="#457b9d" fill="url(#color)"/>
 
-                        <XAxis dataKey="power"  tickFormatter={(str) => `${str}Kw/h`}/>
+                        <XAxis dataKey="power"  tickFormatter={(str) => `${str}Kw/h`}
+                        label={
+                            <Text
+                                x={0}
+                                y={0}
+                                dx={550}
+                                dy={400}
+                                offset={0}
+                                angle={0}
+                            >POWER</Text>
+                        }/>
 
-                        <YAxis dataKey="temperature" tickCount={100} tickFormatter={(str) => `${str.toFixed(3)}°C`}/>
+                        <YAxis dataKey="temperature" domain={[0, 30]} label={
+                            <Text
+                                x={0}
+                                y={0}
+                                dx={50}
+                                dy={130}
+                                offset={0}
+                                angle={-90}
+                            >TEMPERATURE</Text>
+                        } tickFormatter={(str) => `${str.toFixed(2)}°C`}/>
 
                         <Tooltip/>
 
-                        <CartesianGrid opacity={0.6} vertical={false}/>
+                        <CartesianGrid opacity={0.6} vertical={false} strokeDasharray="3 3" />
 
                         </AreaChart>
                     </ResponsiveContainer>
+                    
                 </div>  
-                
             </div>)
     }
 

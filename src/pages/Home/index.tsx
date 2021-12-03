@@ -2,6 +2,8 @@ import { FC, useEffect, useState } from "react";
 import { useData } from "../../hook/data";
 import { ArrayDataGraphic, Value } from "../../types";
 
+import logo from '../../assets/meteorologia.png'
+
 import {
     ResponsiveContainer,
     AreaChart,
@@ -12,11 +14,9 @@ import {
     CartesianGrid,
 } from "recharts";
 
-let array: ArrayDataGraphic[]=[{
-    time:"0",
-    power:"0",
-    temperature:"0"
-}]
+import './styles.css'
+
+let array: ArrayDataGraphic[]=[]
 let itemAux: ArrayDataGraphic={}
 
 const Home :FC= () =>{
@@ -30,35 +30,51 @@ const Home :FC= () =>{
     const {getDataJson, powerValuesKw, dataTemperatureC} = useData();
 
     useEffect(()=>{
+
         getDataJson()
         setPower(powerValuesKw)
         setTemperature(dataTemperatureC)
+
+        console.log(power)
+
     },[]);
 
     useEffect(() => {
+        
         setTimeout(function showTime () {
             const myDate = new Date();
             const hours = myDate.getHours();
             const minutes = myDate.getMinutes();
             const seconds = myDate.getSeconds();
-            const actualTime= `${hours}:${minutes}:${seconds}`
-            setTime(actualTime)
+
+            const checkTime =(i:number) =>{
+                if (i < 10) {
+                    const result =`0${i}`;
+                    return result
+                }
+                return i;
+            }
+            const hs= checkTime(hours);
+            const min= checkTime(minutes);
+            const sec= checkTime(seconds);
+
+            const currentTime= `${hs}:${min}:${sec}`
+            setTime(currentTime)
 
         }, 1000);
-    },[time])
-
-    useEffect(() => {
+        
 
         power?.map((item)=>{
             if(item.time===time){
                 const num=item.value
-                setPow((((Number(num)*1000)*3600)/5).toString())
+                setPow((((Number(num)*1000)*3600)/5).toFixed(1).toString())
                 itemAux ={
-                    power: (((Number(num)*1000)*3600)/5).toString(), 
+                    power: (((Number(num)*1000)*3600)/5).toFixed(1).toString(), 
                 }
+                
             } 
         })
-
+        
         temperature?.map((item)=>{
             if(item.time===time){
                 const num=item.value
@@ -75,12 +91,11 @@ const Home :FC= () =>{
         chartFunction()
         showCurrentData()
 
-    }, [time])
-
+    },[time])
 
     const chartFunction =()=>{
         return(
-            <div className="home">
+            <div className="chart">
                 <div>
                     <ResponsiveContainer width="95%" height={400}>
                         <AreaChart data={array}>
@@ -93,9 +108,9 @@ const Home :FC= () =>{
 
                         <Area dataKey="temperature"  stroke="#2451B7" fill="url(#color)"/>
 
-                        <XAxis dataKey="power" />
+                        <XAxis dataKey="power"  tickFormatter={(str) => `${str}Kw/h`}/>
 
-                        <YAxis dataKey="temperature" tickCount={10} tickFormatter={(str) => `${str.toFixed(3)}°C`}/>
+                        <YAxis dataKey="temperature" tickCount={100} tickFormatter={(str) => `${str.toFixed(3)}°C`}/>
 
                         <Tooltip/>
 
@@ -111,14 +126,31 @@ const Home :FC= () =>{
     const showCurrentData=()=>{
         return(
             <div>
-                <h1>Current status:</h1>
-                <h2>{time}</h2>
-                <h2>{temp}</h2>
-                <h2>{pow}</h2>
+                <div className="container-logo">
+                    <img src={logo} alt="" className='logo'/>
+                    <h1 className="title">METEOLOGICA</h1>
+                </div>
+                <h2 className="title-status">Current status</h2>
+                <div className="current-status">
+                    <div className="status">
+                        <h3>Current time</h3>
+                        <p className="text">{time}</p>
+                    </div>
+                    <div className="status">
+                        <h3>Current temperature</h3>
+                        <p className="text">{temp} °C</p>
+                    </div>
+                    <div className="status">
+                        <h3>Current power</h3>
+                        <p className="text">{pow} Kw/h</p>
+                    </div>
+                </div>
             </div>
+            
         )
     }
 
+    console.log(array)
 
     return(
         <div className="home">            

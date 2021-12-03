@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+.home{
+    height: 100vh;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    background-color: #f1faee;
+}
+
+.chart{
+    margin:3em;
+}
+.container-logo{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    margin-top:2em;
+}
+
+.logo{
+    width: 3%;
+    height: 3%;
+    justify-self: center;
+    margin: 0 1em 0 1em ;
+}
+
+.title{
+    
+    color: #457b9d;
+    font-size: 3em;
+}
+
+.title-status{
+    text-align: center;
+    color: #e63946;
+    font-size: 2.5em;
+}
+
+.current-status{
+    display: flex;
+    flex-direction: row;
+    background-color: #a8dadc;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.status{
+    width: 15em;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f1faee;
+    background-color: #1d3557;
+    padding: 1em;
+    border-radius: 1em;
+    border:none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.text{
+    font-size: 2em;
+}

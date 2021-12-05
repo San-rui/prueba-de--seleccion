@@ -1,6 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 
+//UTILIZANDO REACT-ROUTER-DOM SE MOSTRARA COMO PANTALLA PRINCIPAL "HOME"
 
 function App() {
 

@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/prueba-de-seleccion/static/css/main.0ab88d89.chunk.css",
+    "main.js": "/prueba-de-seleccion/static/js/main.d67a69bb.chunk.js",
+    "main.js.map": "/prueba-de-seleccion/static/js/main.d67a69bb.chunk.js.map",
+    "runtime-main.js": "/prueba-de-seleccion/static/js/runtime-main.972882dc.js",
+    "runtime-main.js.map": "/prueba-de-seleccion/static/js/runtime-main.972882dc.js.map",
+    "static/js/2.59187fdd.chunk.js": "/prueba-de-seleccion/static/js/2.59187fdd.chunk.js",
+    "static/js/2.59187fdd.chunk.js.map": "/prueba-de-seleccion/static/js/2.59187fdd.chunk.js.map",
+    "index.html": "/prueba-de-seleccion/index.html",
+    "static/css/main.0ab88d89.chunk.css.map": "/prueba-de-seleccion/static/css/main.0ab88d89.chunk.css.map",
+    "static/js/2.59187fdd.chunk.js.LICENSE.txt": "/prueba-de-seleccion/static/js/2.59187fdd.chunk.js.LICENSE.txt",
+    "static/media/meteorologia.2ebd27bc.png": "/prueba-de-seleccion/static/media/meteorologia.2ebd27bc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.972882dc.js",
+    "static/js/2.59187fdd.chunk.js",
+    "static/css/main.0ab88d89.chunk.css",
+    "static/js/main.d67a69bb.chunk.js"
+  ]
+}

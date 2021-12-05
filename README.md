@@ -2,7 +2,7 @@
 ## Este proyecto fue realizado con 
 - REACT. JS
 - node 15.14
-- 
+
 ## Deploy:
 
 https://san-rui.github.io/prueba-de-seleccion/

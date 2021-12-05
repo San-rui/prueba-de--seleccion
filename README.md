@@ -2,6 +2,11 @@
 ## Este proyecto fue realizado con 
 - REACT. JS
 - node 15.14
+- 
+## Deploy:
+
+https://san-rui.github.io/prueba-de-seleccion/
+
 ## INTERFAZ GRÁFICA:
 
 - En el “Current status” se muestra la hora, la temperatura y la energía actual. La hora se actualiza a cada segundo y tanto la temperatura como la energía se actualizan cada 5 segundos. 

@@ -11,39 +11,38 @@
     padding-top: 1em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     font-family: 'Barlow Condensed', sans-serif;
     background-color: #f1faee;
 }
 
 .chart{
-    margin:3em;
+    height:100%;
+    margin: 3em 0;
     padding:1em;
+    background-color: #f1faee;
 }
 .container-logo{
     display: flex;
     flex-direction:row;
     align-items: center;
-    margin-top:2em;
 }
 
 .logo{
-    width: 3%;
+    width: 2.5em;
     height: 3%;
     justify-self: center;
     margin: 0 1em 0 1em ;
 }
 
 .title{
-    
     color: #457b9d;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 .title-status{
     text-align: center;
     color: #e63946;
-    font-size: 2.5em;
+    font-size: 2.2em;
 }
 
 .current-status{
@@ -58,7 +57,7 @@
 
 .status{
     width: 15em;
-    margin: 1em;
+    margin: 0.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
